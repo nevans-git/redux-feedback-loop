@@ -24,14 +24,14 @@ const understandingReducer = (state, action ) => {
 }
 
 const supportReducer = (state, action ) => {
-    if (action.type === ''){
+    if (action.type === 'SET_SUPPORT'){
         return action.payload
     }
     return state
 }
 
 const commentsReducer = (state, action ) => {
-    if (action.type === ''){
+    if (action.type === 'SET_COMMENTS'){
         return action.payload
     }
     return state

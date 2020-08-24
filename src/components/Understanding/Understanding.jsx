@@ -9,9 +9,10 @@ import axios from 'axios';
 class Understanding extends Component {
 
     state = {
-        understanding: ''
+        newEntry: {
+            understanding: ''
+        }
     }
-
     componentDidMount(){
         console.log('Understanding is working');
         this.getUnderstanding();
