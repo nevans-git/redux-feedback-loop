@@ -17,7 +17,7 @@ const feelingReducer = (state, action ) => {
 
 // FINISH THESE REDUCERS !!!!!
 const understandingReducer = (state, action ) => {
-    if (action.type === ''){
+    if (action.type === 'SET_UNDERSTANDING'){
         return action.payload
     }
     return state

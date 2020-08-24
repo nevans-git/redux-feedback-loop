@@ -6,6 +6,12 @@ import { connect } from 'react-redux';
 
 class Feeling extends Component {
 
+    state = {
+        newEntry: {
+            feeling: ''
+        }
+    }
+
     // getting data on page load
     componentDidMount(){
         console.log('Feeling is working');
@@ -15,6 +21,16 @@ class Feeling extends Component {
     handleNextBtn = () => {
         console.log('in handleNextBtn ');
 
+    }
+
+    // made to handle inputs
+    handleChangeFor = ( propertyName, event) => {
+        this.setState({
+            newEntry: {
+                ...this.state.newEntry,
+                [propertyName]: event.target.value
+            }
+        })
     }
 
     // getting feeling data
@@ -31,9 +47,11 @@ class Feeling extends Component {
     render(){
         return(
             <>
+            <form>
             <h5>How are you feeling today?</h5>
-            <input required type="number" placeholder="1 through 5"/>
+            <input required type="number" placeholder="1 through 5" onChange={(event) => this.handleChangeFor('feeling', event)}/>
             <button >Next</button>
+            </form>
             </>
         )
     }
